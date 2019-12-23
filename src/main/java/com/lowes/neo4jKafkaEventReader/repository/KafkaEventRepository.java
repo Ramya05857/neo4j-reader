@@ -24,6 +24,6 @@ public class KafkaEventRepository {
     public Result getKafkaEvent(String kafkaEvent) {
         HashMap<String, Object> parameters = new HashMap<>();
         parameters.put("kafkaEvent", kafkaEvent);
-        return session.query("MATCH (n:kafkaEvent {message: $kafkaEvent}) RETURN n", parameters);
+        return session.query("MATCH (n:KafkaEvent {message: $kafkaEvent}) RETURN n", parameters);
     }
 }
